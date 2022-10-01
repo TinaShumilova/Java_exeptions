@@ -8,12 +8,10 @@ import java.util.Scanner;
 public class Homework {
     public static void main(String[] args) throws MyException {
         String result = setString();
-        System.out.printf(result);
         String[] data = result.trim().split("\\s+");
         int len = 6;
-        System.out.println("\n");
-
         int excCode = checkLength(data, len);
+        System.out.printf("Error Code %d \n",excCode);
 
         switch (excCode) {
             case -1:
@@ -27,7 +25,7 @@ public class Homework {
         checkName(sortData);
         correctDate(sortData);
         correctPhone(sortData);
- //       correctGender(sortData);
+        correctGender(sortData);
 
         writeToFile(sortData);
 
@@ -91,7 +89,6 @@ public class Homework {
             result = correctName.checkText(a[i]);
             if (result == false) {
                 throw new MyException("Name " + a[i] + " should starts with capital Letter");
-                //System.out.printf("Name %s should starts with capital Letter", a[i]);
             }
         }
     }
@@ -114,18 +111,12 @@ public class Homework {
     }
 
     public static void correctGender(String[] a) throws MyException {
-/*        Format corrGender = new Format();
+        Format corrGender = new Format();
         String gender = a[5];
         boolean result = corrGender.checkGender(gender);
         if (result == false) {
             throw new MyException("Gender " + gender + " is incorrect");
-        }*/
-
-        String gender = a[5];
-        if (gender != "m"){
-            throw new MyException("Gender " + gender + " is incorrect");
         }
-
     }
 }
 

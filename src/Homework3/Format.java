@@ -1,14 +1,6 @@
 package Homework3;
 
 public class Format {
-/*
-
-    String name;
-    String surname;
-    String fathername;
-*/
-
-
     public boolean checkText(String text) {
         boolean result = false;
         char letter = text.charAt(0);
@@ -115,15 +107,15 @@ public class Format {
         return result;
     }
 
-    public boolean checkGender(String gender) {
+    public boolean checkGender(String data) {
         boolean result = false;
-        if (gender == "m") {
+        char gender = data.charAt(0);
+        if (gender == 'm') {
             return true;
-        } else if (gender == "f") {
+        } else if (gender == 'f') {
             result = true;
         }
         return result;
-
     }
 
 }
